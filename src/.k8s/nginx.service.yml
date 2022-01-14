@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end
+  labels:
+    app: front-end
+spec:
+  selector:
+    app: static-site
+  type: LoadBalancer
+  ports:
+  - name: "80"
+    port: 80
+    targetPort: 80
+  - name: "443"
+    port: 443
+    targetPort: 443
