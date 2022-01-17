@@ -27,5 +27,10 @@ terraform {
   }
 
   required_version = ">= 0.14"
+  backend "s3" {
+    bucket = "rolstadtfstate"
+    key    = "rolstadlearnk8s/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
