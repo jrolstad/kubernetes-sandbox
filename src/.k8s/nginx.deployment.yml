@@ -15,7 +15,7 @@ spec:
         app: static-site
     spec:
       containers:
-      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-eks:nginx_9
+      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-frontend-static:nginx_9
         imagePullPolicy: IfNotPresent
         name: nginx
         ports:
