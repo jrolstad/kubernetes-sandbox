@@ -25,6 +25,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
         aws-region: us-east-2
 
+    - name: Deploy Web App
+      uses: ianbelcher/eks-kubectl-action@master
+      with:
+        cluster_name: ${{ secrets.CLUSTER_NAME }}
+        args: apply -f .k8s/nginx.deployment.yml
+
     - name: Deploy Service
       uses: ianbelcher/eks-kubectl-action@master
       with:

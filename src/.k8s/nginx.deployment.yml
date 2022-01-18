@@ -15,7 +15,7 @@ spec:
         app: static-site
     spec:
       containers:
-      - image: jrolstad/nginx:v1
+      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-eks:nginx_9
         imagePullPolicy: IfNotPresent
         name: nginx
         ports:
