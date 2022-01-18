@@ -45,5 +45,5 @@ jobs:
         ECR_REPOSITORY: rolstadlearnk8s
         IMAGE_TAG: ${{ github.run_number }}
       run: |
-        docker build -f .docker/nginx.dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ../
+        docker build -f .docker/nginx.dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
