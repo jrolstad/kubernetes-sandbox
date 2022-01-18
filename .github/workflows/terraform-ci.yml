@@ -4,10 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches: '**'
-    paths: ./src/.infra
   pull_request:
-    branches: '**' 
-    paths: ./src/.infra
+    branches: '**'
 
 jobs:
   build:
