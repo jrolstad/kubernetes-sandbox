@@ -33,3 +33,9 @@ jobs:
       with:
         cluster_name: ${{ secrets.CLUSTER_NAME }}
         args: apply -f ./src/.k8s/nginx.service.yml
+        
+    - name: Describe Service
+      uses: ianbelcher/eks-kubectl-action@master
+      with:
+        cluster_name: ${{ secrets.CLUSTER_NAME }}
+        args: describe -f ./src/.k8s/nginx.service.yml
