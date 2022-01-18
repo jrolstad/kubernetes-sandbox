@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./src/.docker
+        working-directory: ./src
         shell: bash
     environment: production
     env:
-      working-directory: ./src/.docker
+      working-directory: ./src
 
     steps:
     - name: Checkout
@@ -44,6 +44,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: rolstadlearnk8s
         IMAGE_TAG: ${{ github.run_number }}
+        working-directory: ./src/.docker
       run: |
         docker build -f nginx.dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ../
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
