@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./src/.k8s
         shell: bash
     environment: production
-    env:
-      working-directory: ./src/.k8s
 
     steps:
     - name: Checkout
@@ -29,10 +26,10 @@ jobs:
       uses: ianbelcher/eks-kubectl-action@master
       with:
         cluster_name: ${{ secrets.CLUSTER_NAME }}
-        args: apply -f nginx.deployment.yml
+        args: apply -f ./src/.k8s/nginx.deployment.yml
 
     - name: Deploy Service
       uses: ianbelcher/eks-kubectl-action@master
       with:
         cluster_name: ${{ secrets.CLUSTER_NAME }}
-        args: apply -f nginx.service.yml
+        args: apply -f ./src/.k8s/nginx.service.yml
