@@ -48,8 +48,8 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: rolstadlearnk8s-eks
-        IMAGE_TAG: "nginx_${{ github.run_number }}"
+        ECR_REPOSITORY: rolstadlearnk8s-frontend-static
+        IMAGE_TAG: ${{ github.run_number }}
       run: |
         docker build -f .docker/nginx.dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
