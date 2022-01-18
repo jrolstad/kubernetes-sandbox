@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "registry" {
-  name                 = local.cluster_name
+  name                 = "rolstadlearnk8s-eks"
   image_tag_mutability = "IMMUTABLE"
 
   image_scanning_configuration {
