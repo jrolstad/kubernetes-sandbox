@@ -26,7 +26,7 @@ jobs:
         aws-region: us-east-2
 
     - name: Deploy Service
-        uses: ianbelcher/eks-kubectl-action@master
-        with:
-          cluster_name: ${{ secrets.CLUSTER_NAME }}
-          args: get pods
+      uses: ianbelcher/eks-kubectl-action@master
+      with:
+        cluster_name: ${{ secrets.CLUSTER_NAME }}
+        args: get pods
