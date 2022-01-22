@@ -19,5 +19,5 @@ spec:
         imagePullPolicy: IfNotPresent
         name: api
         ports:
-        - containerPort: 3004
+        - containerPort: 80
         resources: {}

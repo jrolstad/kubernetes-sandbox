@@ -9,6 +9,9 @@ spec:
     app: api
   type: LoadBalancer
   ports:
-  - name: "3004"
-    port: 3004
-    targetPort: 3004
+  - name: "80"
+    port: 80
+    targetPort: 80
+  - name: "443"
+    port: 443
+    targetPort: 443

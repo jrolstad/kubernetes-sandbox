@@ -3,7 +3,6 @@ FROM golang:alpine
 LABEL author="Josh Rolstad"
 
 ENV GIN_MODE=release
-ENV PORT=3004
 
 COPY ./app/webservice-gin /api
 
@@ -15,6 +14,6 @@ RUN go get
 
 RUN go build .
 
-EXPOSE $PORT
+EXPOSE 80 443
 
 ENTRYPOINT ["./webservice-gin"]
