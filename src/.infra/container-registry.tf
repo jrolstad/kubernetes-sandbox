@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "registry_frontend" {
+resource "aws_ecr_repository" "registry" {
   name                 = "rolstadlearnk8s-frontend-static"
   image_tag_mutability = "IMMUTABLE"
 
