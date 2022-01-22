@@ -28,8 +28,20 @@ jobs:
         cluster_name: ${{ secrets.CLUSTER_NAME }}
         args: apply -f ./src/.k8s/nginx.deployment.yml
 
-    - name: Deploy Service
+    - name: Deploy Web App Service
       uses: ianbelcher/eks-kubectl-action@master
       with:
         cluster_name: ${{ secrets.CLUSTER_NAME }}
         args: apply -f ./src/.k8s/nginx.service.yml
+
+    - name: Deploy API App
+      uses: ianbelcher/eks-kubectl-action@master
+      with:
+        cluster_name: ${{ secrets.CLUSTER_NAME }}
+        args: apply -f ./src/.k8s/api.deployment.yml
+
+    - name: Deploy API Service
+      uses: ianbelcher/eks-kubectl-action@master
+      with:
+        cluster_name: ${{ secrets.CLUSTER_NAME }}
+        args: apply -f ./src/.k8s/api.service.yml
