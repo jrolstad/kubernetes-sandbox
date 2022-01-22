@@ -15,7 +15,7 @@ spec:
         app: api
     spec:
       containers:
-      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-frontend-api:16
+      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-frontend-api:17
         imagePullPolicy: IfNotPresent
         name: api
         ports:
