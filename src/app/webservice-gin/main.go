@@ -23,7 +23,7 @@ func main() {
 	router.GET("/albums/:id", getAlbum)
 	router.POST("/albums", postAlbum)
 
-	router.Run("localhost:8080")
+	router.Run(":3004")
 }
 
 func getAlbums(c *gin.Context) {
