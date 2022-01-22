@@ -30,3 +30,5 @@ override.tf.json
 
 # JetBrains IDE files
 **/.idea/*
+src/app/webservice-gin/webservice-gin
+src/app/webservice-gin/webservice-gin.exe
