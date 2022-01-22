@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: api
+  name: api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - image: 212694347413.dkr.ecr.us-east-2.amazonaws.com/rolstadlearnk8s-frontend-api:16
+        imagePullPolicy: IfNotPresent
+        name: api
+        ports:
+        - containerPort: 3004
+        resources: {}
